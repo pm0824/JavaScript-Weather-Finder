@@ -18,7 +18,7 @@
 
 > Follow my [Codepen](https://codepen.io/girl_inwebdev) profile for more JavaScript Projects
 
-> Connect with me on instagram - [girl.inwebdev](https://www.instagram.com/girl.inwebdev/) to learn web developent together
+> Connect with me on instagram - [girl.inwebdev](https://www.instagram.com/girl.inwebdev/) to learn web development together
 
 
 
