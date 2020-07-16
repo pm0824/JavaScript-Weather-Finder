@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Indicator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="weather-app">
+        <h1 class="title">WEATHER</h1>
+        <div class="weather-card">
+            <div class="weather-heading">
+                <p class="heading-date" id="date">Date</p>
+                <h3 class="heading-city" id="city_text">City</h3>
+            </div>
+            <div class="weather-icon anim">
+                <img src="" alt="weather-icon" id="icon">
+            </div>
+            <div class="weather-description anim">
+                <div class="temperature-display" id="temperature">
+                    <h2 class="temperature-degree" id="temp_text">34 </h2>
+                    <p> &#176;<span id="unit">C</span></p>
+                </div>    
+                <div class="temperature-description" id="temp_desc_text">Very Cold</div>
+            </div>
+        </div>
+        <div class="location">
+            <input type="text" class="city_input" name="cityname" id="cityname" placeholder="Find Weather Of City">
+            <button type="submit" class="submit" onclick="return gsapanimation()"></button>
+        </div>
+    </main>
+    <footer>
+        <p> Made with &#10084;&#65039; by <a href="https://github.com/pm0824" target="__blank">Prachi</a></p>
+    </footer>
+
+
+    <script src="script.js"></script>
+    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+    <script>
+        gsap.from(".weather-card",{opacity:0, duration:1.5,ease: "back.out(1.9)", x:-100});
+        gsap.from(".location",{opacity:0, duration:1.5,ease: "back.out(1.9)", x:100});
+        function gsapanimation(){
+            console.log("animation");
+            gsap.from(".anim",{opacity:0, duration:1,y:-100, stagger:0.4});
+        }
+    </script>
+</body>
+</html>
