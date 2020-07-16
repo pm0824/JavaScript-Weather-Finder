@@ -10,7 +10,9 @@ var weather = {
      icon:document.getElementById("icon"),
      unit:document.getElementById("unit"),
      temp_unit: "",
-    display_weather: function(city,country,temp,temp_desc,iconid){
+    
+        //display weather data
+     display_weather: function(city,country,temp,temp_desc,iconid){
         console.log(city,country,temp,temp_desc,iconid);
         this.date.textContent= this.today.getDate()+" - "+this.today.getMonth()+" - "+this.today.getFullYear();
         
@@ -22,6 +24,7 @@ var weather = {
         this.icon.src=`images/${iconid}.png`;
     },
 
+    //toggle temperature between celcius and fahrenheit
     toggle_temperature: function(){
         var temp = this.temp_text.textContent;
         if(this.temp_unit=='C'){
@@ -62,13 +65,8 @@ function setPosition(position){
 }
 
 function getWeather(latitude, longitude){
-    let api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`;
-    
-    fetch(api)
-        .then(function(response){
-            let data = response.json();
-            return data;
-        })
+    fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`)
+        .then(response => response.json())
         .then(function(data){
             console.log(data);
             var city= data.name;
@@ -77,10 +75,12 @@ function getWeather(latitude, longitude){
             var temp_desc=data.weather[0].description;
             var icon = data.weather[0].icon;
             weather.display_weather(city,country,temp,temp_desc,icon);
-        });
+        })
+        .catch(err => alert("Something Went Wrong..."));
 }
 
 
+//Get weather using city name entered by user
 button.addEventListener('click', function(name){
 fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=${key}`)
 .then(response => response.json())

@@ -10,11 +10,11 @@ html {
     font-size: 62.5%;
 }
   
-  @media only screen and (max-width: 46em) {
+@media only screen and (max-width: 46em) {
     html {
       font-size: 50.5%;
     }
-  }
+ }
 
 body{
     height:100vh;
@@ -39,6 +39,7 @@ body{
     letter-spacing: 0.7rem;
 }
 
+/* Weather Card Start*/
 .weather-card{
     border-radius: 5px;
     width: 30rem;
@@ -99,7 +100,9 @@ img{
     font-size: 2.6rem;
     text-align: center;
 }
+/* Weather Card End*/
 
+/* Input Fields for city*/
 .location{
     height: 10vh;
     width: auto;
@@ -109,67 +112,65 @@ img{
     padding: 5rem 1.5rem;
 }
 
+input {
+    font-size: 1.5rem;
+    background-color: #f4f2f2;
+    color: rgb(92, 92, 92);
+    border: none;
+    padding: .7rem 0 0.7rem 2rem;
+    border-radius: 100px;
+    width: 28rem;
+    margin-right: -3.25rem;
+}
 
-
-    input {
-        font-size: 1.5rem;
-        background-color: #f4f2f2;
-        color: rgb(92, 92, 92);
-        border: none;
-        padding: .7rem 0 0.7rem 2rem;
-        border-radius: 100px;
-        width: 28rem;
-        margin-right: -3.25rem;
-    }
-
-    input:focus{
-            outline: none;
-        }
+input:focus{
+    outline: none;
+}
 
 input::-webkit-input-placeholder{      
-            font-weight: 100;
-            color: rgb(92, 92, 92);
-        }
+    font-weight: 100;
+    color: rgb(92, 92, 92);
+}
 
-    button{
-        cursor: pointer;
-        border: none;
-        width: 22px;
-        height: 22px;
-        background-color: rgb(92, 92, 92);
-            -webkit-mask-image: url(images/search.svg);
-            -webkit-mask-size: cover;
-            mask-image: url(images/search.svg);
-            mask-size: cover;
-            background-image: none; 
+button{
+    cursor: pointer;
+    border: none;
+    width: 22px;
+    height: 22px;
+    background-color: rgb(92, 92, 92);
+    -webkit-mask-image: url(images/search.svg);
+    -webkit-mask-size: cover;
+    mask-image: url(images/search.svg);
+    mask-size: cover;
+    background-image: none; 
     }
 
-    button:focus {
-        outline: none;
-        cursor: pointer;
-     }
+button:focus {
+    outline: none;
+    cursor: pointer;
+}
 
 /*Footer*/
-     footer {
-        position: fixed;
-        padding-bottom: 1.5rem;
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        text-align: center;
-        font-size: 1.3rem;
-      }
+footer {
+    position: fixed;
+    padding-bottom: 1.5rem;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+}
       
-      a{
-        text-decoration: none;
-        color: #3ae374;
-        border-bottom: 1px solid #fa8231;
-        transition: all 0.2s;
-      }
-      
-      a:hover, a:active{
-        font-size: 1.5rem;
-      }
+a{
+    text-decoration: none;
+    color: #3ae374;
+    border-bottom: 1px solid #fa8231;
+    transition: all 0.2s;
+}
+  
+a:hover, a:active{
+    font-size: 1.5rem;
+}
     
 
 
