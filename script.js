@@ -62,7 +62,7 @@ function setPosition(position){
 }
 
 function getWeather(latitude, longitude){
-    let api = `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`;
+    let api = `https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${key}&units=metric`;
     
     fetch(api)
         .then(function(response){
@@ -82,7 +82,7 @@ function getWeather(latitude, longitude){
 
 
 button.addEventListener('click', function(name){
-fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=${key}`)
+fetch(`https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=${key}`)
 .then(response => response.json())
 .then(data => {
     var city= data.name;
